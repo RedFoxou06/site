@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>En dev</title>
+  <meta name="description" content="Site temporaire — en développement" />
+  <style>
+    /* Style minimal, centré et lisible */
+    :root {
+      --bg: #0b1220;
+      --text: #e6eef8;
+      --accent: #7dd3fc;
+      --glass: rgba(255,255,255,0.03);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f8fb;
+        --text: #071127;
+        --accent: #0ea5e9;
+      }
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, var(--bg), #071127 60%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .wrap {
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.02);
+      border-radius: 12px;
+      padding: 40px 28px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.5);
+      backdrop-filter: blur(6px);
+      max-width: 680px;
+      width: 100%;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 6vw, 56px);
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin-top: 12px;
+      color: rgba(230,238,248,0.75);
+      font-size: 15px;
+    }
+
+    .small {
+      margin-top: 14px;
+      font-size: 13px;
+      color: rgba(230,238,248,0.55);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<div class="wrap" role="main">
+  <div class="card" aria-live="polite">
+    <h1>en dev</h1>
+    <p>Ce site est en développement — reviens bientôt pour voir le portfolio et les services.</p>
+    <div class="small">RedFoxou06</a></div>
+  </div>
+</div>
+</body>
+</html>
