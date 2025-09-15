@@ -1,58 +1,55 @@
 :root {
-  --bg: #0b1220;
-  --text: #e6eef8;
-  --accent: #7dd3fc;
-  --glass: rgba(255,255,255,0.03);
+  --primary: #8cd7ff;
+  --secondary: #e6f3ff;
+  --light-text: #fff;
 }
 
-html, body {
-  height: 100%;
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  background: linear-gradient(180deg, var(--bg), #071127 60%);
-  color: var(--text);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-.wrap {
-  min-height: 100%;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--secondary);
+  color: #333;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
   justify-content: center;
-  padding: 24px;
+  align-items: center;
   text-align: center;
+  padding: 1rem;
 }
 
-.card {
-  background: rgba(255,255,255,0.02);
+header {
+  background: var(--primary);
+  color: var(--light-text);
+  padding: 2rem 1rem;
   border-radius: 12px;
-  padding: 40px 28px;
-  box-shadow: 0 8px 30px rgba(2,6,23,0.5);
-  backdrop-filter: blur(6px);
-  max-width: 680px;
-  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
 }
 
-h1 {
-  margin: 0;
-  font-size: clamp(28px, 6vw, 56px);
-  letter-spacing: -0.02em;
+header h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
 }
 
-p {
-  margin-top: 12px;
-  color: rgba(230,238,248,0.75);
-  font-size: 15px;
+section h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--primary);
 }
 
-.small {
-  margin-top: 14px;
-  font-size: 13px;
-  color: rgba(230,238,248,0.55);
+footer {
+  margin-top: 2rem;
+  color: #555;
+  font-size: 0.9rem;
 }
 
-a {
-  color: var(--accent);
-  text-decoration: none;
+/* Responsive simple */
+@media (max-width: 480px) {
+  header {
+    padding: 1.5rem 1rem;
+  }
 }
