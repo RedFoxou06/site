@@ -5,14 +5,6 @@
   --glass: rgba(255,255,255,0.03);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg: #f6f8fb;
-    --text: #071127;
-    --accent: #0ea5e9;
-  }
-}
-
 html, body {
   height: 100%;
   margin: 0;
