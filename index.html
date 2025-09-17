@@ -35,8 +35,8 @@
   <!-- Ma HomePage-->
   <div class="homepage">
     <img src="img/logo_homepage.png" alt="logo_homepage" id="logo_homepage">
-    <h3>Projet 2</h3>
-    <p>Courte description du projet 2.</p>
+    <h3>HomePage</h3>
+    <p>Je me suis fait une homepage pour mon pc fixe. Cette homepage me permet d'ouvrir des applications via des boutons accessible sur la page ou me propose des idées quand je m'ennuie. J'ai également ajouté un mode sombre pour quand il se fait tard.</p>
     <a href="projet2.html"><button>En savoir plus</button></a>
   </div>
 
@@ -49,10 +49,37 @@
   </div>
 </section>
 
+<!-- contact  -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Vous pouvez me contacter directement via :</p>
+
+  <ul>
+    <li>Email : <a href="mailto:nathan.fraysse@example.com">frayssen27@gmail.com</a></li>
+    <li>LinkedIn : <a href="https://www.linkedin.com/in/nathan-fraysse" target="_blank">Mon profil LinkedIn</a></li>
+    <li>GitHub : <a href="https://github.com/RedFoxou06" target="_blank">Mes projets sur GitHub</a></li>
+  </ul>
+
+  <!-- formulaire simple /!\ -> il faudra s'occuper du PHP après sauf si je passe par formspree -->
+  <form action="https://formspree.io/f/xblavzqy" method="POST">
+    <label for="name">Nom :</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message :</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Envoyer</button>
+  </form>
+</section>
+
+
 <!-- Footer -->
 <footer>
   <p>© Nathan Fraysse</p>
 </footer>
-
+<script src="js/app.js"></script>
 </body>
 </html>
