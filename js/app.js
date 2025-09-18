@@ -11,45 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Animation au survol des liens de navigation
-    function setupNavigationAnimations() {
-        const navLinks = document.querySelectorAll('nav a');
-
-        navLinks.forEach(link => {
-            // Animation au survol
-            link.addEventListener('mouseenter', function() {
-                this.style.transition = 'all 0.3s ease, color 0.3s ease, transform 0.3s ease';
-                this.style.color = 'var(--light-text)';
-                this.style.transform = 'translateY(-2px)';
-
-                // Animation du ::before (effet de remplissage)
-                const before = this.querySelector('::before') || this;
-                this.style.position = 'relative';
-                if (!this.getAttribute('data-animated')) {
-                    this.style.setProperty('--before-left', '0');
-                    this.setAttribute('data-animated', 'true');
-                }
-            });
-
-            link.addEventListener('mouseleave', function() {
-                this.style.color = 'var(--dark-text)';
-                this.style.transform = 'translateY(0)';
-                this.style.setProperty('--before-left', '-100%');
-                this.setAttribute('data-animated', 'false');
-            });
-
-            // Ajouter la transition CSS dynamiquement pour l'effet ::before
-            const style = document.createElement('style');
-            style.textContent = `
-                nav a::before {
-                    transition: left 0.3s ease;
-                    left: var(--before-left, -100%);
-                }
-            `;
-            document.head.appendChild(style);
-        });
-    }
-
     // Animation au survol des cartes de projets
     function setupProjectCardsAnimations() {
         const projectCards = document.querySelectorAll('.valoapp, .homepage');
@@ -242,7 +203,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialiser toutes les animations
     function initializeAnimations() {
         animatePresentationOnLoad();
-        setupNavigationAnimations();
         setupProjectCardsAnimations();
         setupButtonAnimations();
         setupContactAnimations();
@@ -258,4 +218,21 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
         animatePresentationOnLoad();
     }, 100);
+});
+
+let lastScrollY = window.scrollY;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scroll vers le bas -> cacher
+        header.classList.add('hidden');
+    } else {
+        // Scroll vers le haut -> montrer
+        header.classList.remove('hidden');
+    }
+
+    lastScrollY = currentScrollY;
 });
