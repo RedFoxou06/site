@@ -147,6 +147,12 @@ button {
     padding: 1rem 1.5rem;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(140, 215, 255, 0.2);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#contact li:hover {
+    border-color: var(--primary);
 }
 
 #contact a {
