@@ -116,6 +116,80 @@ nav a:hover::before {
   margin-bottom: 2rem;
 }
 
+/* Section competences*/
+
+#competences {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  margin-top: 2rem;
+  box-shadow: var(--shadow);
+}
+
+#competences h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--dark-text);
+  position: relative;
+}
+
+.languages {
+  background: var(--light-text);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.languages h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark-text);
+}
+
+.languages p {
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.outils {
+  background: var(--light-text);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.outils h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark-text);
+}
+
+.outils p {
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.languages-list {
+  margin-left: 5%;
+}
+
+.outils-list {
+  margin-left: 5%;
+}
+
 /* Section Projets */
 #projects {
   padding: 6rem 2rem;

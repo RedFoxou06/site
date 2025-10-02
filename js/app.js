@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Animation au survol des cartes de projets
     function setupProjectCardsAnimations() {
-        const projectCards = document.querySelectorAll('.valoapp, .homepage');
+        const projectCards = document.querySelectorAll('.languages, .outils, .valoapp, .homepage');
 
         projectCards.forEach(card => {
             const img = card.querySelector('img');
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, observerOptions);
 
         // Observer les sections
-        const sectionsToAnimate = document.querySelectorAll('#projects, #contact');
+        const sectionsToAnimate = document.querySelectorAll('#competences, #projects, #contact');
         sectionsToAnimate.forEach(section => {
             section.style.opacity = '0';
             section.style.transform = 'translateY(30px)';
