@@ -58,7 +58,8 @@ nav a {
     position: relative;
     overflow: hidden;
     transition: color 0.3s, transform 0.3s;
-    z-index: 1; /* texte au-dessus du ::before */
+    z-index: 1;
+    white-space: nowrap;
 }
 
 nav a::before {
@@ -69,12 +70,12 @@ nav a::before {
     width: 100%;
     height: 100%;
     background: var(--primary);
-    z-index: -1; /* arrière-plan animé derrière le texte */
+    z-index: -1;
     transition: left 0.3s;
 }
 
 nav a:hover {
-    color: var(--light-text); /* texte devient blanc pendant hover */
+    color: var(--light-text);
     transform: translateY(-2px);
 }
 
@@ -215,14 +216,22 @@ footer {
     }
 
     nav {
-        flex-wrap: wrap;
-        gap: 1rem;
+        gap: 0.8rem;
         padding: 0 1rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    nav::-webkit-scrollbar {
+        display: none;
     }
 
     nav a {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
     }
 
     button {
@@ -247,11 +256,11 @@ footer {
 
     nav {
         gap: 0.5rem;
-        justify-content: space-between;
+        padding: 0 0.8rem;
     }
 
     nav a {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.8rem;
         font-size: 0.8rem;
         border-radius: 20px;
     }
@@ -274,8 +283,8 @@ footer {
 
 @media (max-width: 320px) {
     nav a {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.7rem;
+        padding: 0.4rem 0.6rem;
+        font-size: 0.75rem;
     }
 
     button {
