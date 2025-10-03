@@ -1,0 +1,191 @@
+/* Variables CSS */
+:root {
+    --primary: #8cd7ff;
+    --secondary: #e6f3ff;
+    --light-text: #fff;
+    --dark-text: #2c3e50;
+    --gradient-bg: linear-gradient(135deg, #8cd7ff 0%, #e6f3ff 100%);
+    --shadow: 0 10px 30px rgba(140, 215, 255, 0.3);
+    --hover-shadow: 0 15px 40px rgba(140, 215, 255, 0.4);
+}
+
+/* Reset et base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background: var(--gradient-bg);
+    min-height: 100vh;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 2px 20px rgba(140, 215, 255, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+header.hidden {
+    transform: translateY(-120%);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s, transform 0.3s;
+    z-index: 1; /* texte au-dessus du ::before */
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    z-index: -1; /* arrière-plan animé derrière le texte */
+    transition: left 0.3s;
+}
+
+nav a:hover {
+    color: var(--light-text); /* texte devient blanc pendant hover */
+    transform: translateY(-2px);
+}
+
+nav a:hover::before {
+    left: 0;
+}
+
+/* Passion */
+#passion {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    margin-top: 2rem;
+    box-shadow: var(--shadow);
+}
+
+#passion h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--dark-text);
+    position: relative;
+}
+
+.bowling,
+.musique,
+.jeux_video {
+    background: var(--light-text);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.bowling h3,
+.musique h3,
+.jeux_video h3{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-text);
+}
+
+.bowling p,
+.musique p,
+.jeux_video p {
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    background: var(--dark-text);
+    color: var(--light-text);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem 0;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    nav a {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        gap: 0.5rem;
+        justify-content: space-between;
+    }
+
+    nav a {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+        border-radius: 20px;
+    }
+
+    footer {
+        padding: 1.5rem 1rem;
+        margin-top: 1rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 320px) {
+    nav a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.7rem;
+    }
+}
