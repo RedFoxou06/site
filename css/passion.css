@@ -22,14 +22,12 @@ body {
     color: var(--dark-text);
     background: var(--gradient-bg);
     min-height: 100vh;
-    padding: 0 1rem;
 }
 
 header {
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
+    width: 100%;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
@@ -87,10 +85,10 @@ nav a:hover::before {
 
 /* Section Passion */
 #passion {
-    padding: 2rem;
+    padding: 6rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 2rem;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 20px;
     box-shadow: var(--shadow);
@@ -158,29 +156,14 @@ footer {
 /* Responsive Design */
 @media (max-width: 1024px) {
     #passion {
-        margin-top: 90px;
-        padding: 1.5rem;
-    }
-
-    #passion h2 {
-        font-size: 2.2rem;
-        margin-bottom: 2.5rem;
-    }
-
-    .bowling,
-    .musique,
-    .jeux_video {
-        padding: 1.8rem;
+        margin: 1rem;
+        padding: 4rem 1.5rem;
     }
 }
 
 @media (max-width: 768px) {
-    body {
-        padding: 0 0.8rem;
-    }
-
     header {
-        padding: 0.8rem 0;
+        padding: 0.5rem 0;
     }
 
     nav {
@@ -203,8 +186,8 @@ footer {
     }
 
     #passion {
-        margin-top: 90px;
-        padding: 1.5rem;
+        margin: 1rem 0.5rem;
+        padding: 3rem 1.5rem;
         border-radius: 15px;
     }
 
@@ -217,7 +200,7 @@ footer {
     .musique,
     .jeux_video {
         padding: 1.5rem;
-        border-radius: 12px;
+        margin-bottom: 1.5rem;
     }
 
     .bowling h3,
@@ -228,13 +211,9 @@ footer {
 }
 
 @media (max-width: 480px) {
-    body {
-        padding: 0 0.5rem;
-    }
-
     nav {
         gap: 0.5rem;
-        padding: 0 0.8rem;
+        justify-content: space-between;
     }
 
     nav a {
@@ -244,34 +223,36 @@ footer {
     }
 
     #passion {
-        margin-top: 85px;
-        padding: 1.2rem;
-        border-radius: 12px;
+        margin: 0.5rem;
+        padding: 2rem 1rem;
+        border-radius: 10px;
     }
 
     #passion h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         margin-bottom: 1.5rem;
     }
 
     .bowling,
     .musique,
     .jeux_video {
-        padding: 1.2rem;
-        margin-bottom: 1.5rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 10px;
     }
 
     .bowling h3,
     .musique h3,
     .jeux_video h3 {
         font-size: 1.2rem;
+        margin-bottom: 0.8rem;
     }
 
     .bowling p,
     .musique p,
     .jeux_video p {
-        font-size: 0.95rem;
-        line-height: 1.6;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
     }
 
     footer {
@@ -285,28 +266,23 @@ footer {
 }
 
 @media (max-width: 320px) {
-    body {
-        padding: 0 0.3rem;
-    }
-
     nav a {
         padding: 0.4rem 0.6rem;
         font-size: 0.75rem;
     }
 
     #passion {
-        margin-top: 80px;
-        padding: 1rem;
+        padding: 1.5rem 0.8rem;
     }
 
     #passion h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .bowling,
     .musique,
     .jeux_video {
-        padding: 1rem;
+        padding: 0.8rem;
     }
 
     .bowling h3,
