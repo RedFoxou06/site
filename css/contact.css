@@ -210,6 +210,14 @@ footer {
     margin-top: 2rem;
 }
 
+/* Responsive Design */
+@media (max-width: 1024px) {
+    #contact {
+        margin: 1rem;
+        padding: 4rem 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     header {
         padding: 0.5rem 0;
@@ -234,6 +242,17 @@ footer {
         font-size: 0.85rem;
     }
 
+    #contact {
+        margin: 5rem 0.5rem 0 0.5rem;
+        padding: 3rem 1.5rem;
+        border-radius: 15px;
+    }
+
+    #contact h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
     button {
         padding: 0.7rem 1.5rem;
         font-size: 0.9rem;
@@ -241,19 +260,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-    #contact {
-        margin: 0.5rem;
-        padding: 2rem 1rem;
-    }
-
-    #contact h2 {
-        font-size: 1.6rem;
-    }
-
-    #contact p {
-        font-size: 1rem;
-    }
-
     nav {
         gap: 0.5rem;
         padding: 0 0.8rem;
@@ -263,6 +269,19 @@ footer {
         padding: 0.5rem 0.8rem;
         font-size: 0.8rem;
         border-radius: 20px;
+    }
+
+    #contact {
+        margin: 4.5rem 0.5rem 0 0.5rem;
+        padding: 2rem 1rem;
+    }
+
+    #contact h2 {
+        font-size: 1.6rem;
+    }
+
+    #contact p {
+        font-size: 1rem;
     }
 
     button {
@@ -285,6 +304,15 @@ footer {
     nav a {
         padding: 0.4rem 0.6rem;
         font-size: 0.75rem;
+    }
+
+    #contact {
+        margin: 4rem 0.5rem 0 0.5rem;
+        padding: 1.5rem 0.8rem;
+    }
+
+    #contact h2 {
+        font-size: 1.4rem;
     }
 
     button {

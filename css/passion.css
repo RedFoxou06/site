@@ -87,8 +87,8 @@ nav a:hover::before {
 #passion {
     padding: 6rem 2rem;
     max-width: 1200px;
-    margin: 0 auto;
-    margin-top: 2rem;
+    margin: 2rem auto;
+    margin-top: 7%;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 20px;
     box-shadow: var(--shadow);
@@ -186,8 +186,8 @@ footer {
     }
 
     #passion {
-        margin: 1rem 0.5rem;
-        padding: 5rem 1.5rem 3rem 1.5rem;
+        margin: 5rem 0.5rem 0 0.5rem;
+        padding: 3rem 1.5rem;
         border-radius: 15px;
     }
 
@@ -223,8 +223,8 @@ footer {
     }
 
     #passion {
-        margin: 0.5rem;
-        padding: 4.5rem 1rem 2rem 1rem;
+        margin: 4.5rem 0.5rem 0 0.5rem;
+        padding: 2rem 1rem;
         border-radius: 10px;
     }
 
@@ -272,7 +272,8 @@ footer {
     }
 
     #passion {
-        padding: 4rem 0.8rem 1.5rem 0.8rem;
+        margin: 4rem 0.5rem 0 0.5rem;
+        padding: 1.5rem 0.8rem;
     }
 
     #passion h2 {
