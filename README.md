@@ -6,7 +6,6 @@ Pour récuperer les informations du questionnaire de contact, je suis passé par
 
 > **Note :** n'ayant pas étudié encore de Javascript en cours, je me suis aidé de supports externes (documentation en ligne et IA) afin de le produire.
 
-
 **Langages utilisés :**
 - HTML
 - CSS
