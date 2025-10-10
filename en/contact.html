@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="icon" type="image/png" href="../img/logo_64.png">
+    <link rel="stylesheet" href="../css/contact.css">
+</head>
+<body>
+
+<!-- navbar -->
+<header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="projets.html">My projects</a>
+        <a href="passion.html">My passions</a>
+        <a href="contact.html">Contact me</a>
+        <a href="../contact.html" class="lang-btn">FR</a>
+    </nav>
+</header>
+
+<!-- contact -->
+<section id="contact">
+    <h2>Let’s get in touch!</h2>
+    <p>You can contact me directly via:</p>
+
+    <ul>
+        <li>Email: <a href="mailto:nathan_fraysse@redfoxou.dev">nathan_fraysse@redfoxou.dev</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/nathan-fraysse" target="_blank">My LinkedIn profile</a></li>
+        <li>GitHub: <a href="https://github.com/RedFoxou06" target="_blank">My GitHub projects</a></li>
+    </ul>
+
+    <form action="https://formspree.io/f/mrbawodv" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© Nathan Fraysse</p>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+</html>

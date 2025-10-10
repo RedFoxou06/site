@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="icon" type="image/png" href="../img/logo_64.png">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<!-- navbar -->
+<header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="projets.html">My projects</a>
+        <a href="passion.html">My passions</a>
+        <a href="contact.html">Contact me</a>
+        <a href="../index.html" class="lang-btn">FR</a>
+    </nav>
+</header>
+
+<!-- About me section -->
+<section id="about">
+    <div class="presentation">
+        <h1>Hello, I’m Nathan Fraysse</h1>
+        <p>I’m a student in application development. On this website, you’ll find all the projects I’ve created as well as some I’ve contributed to.
+            For any questions, please fill out the contact form or send me an email directly.</p>
+    </div>
+</section>
+
+<section id="competences">
+    <h2>My skills</h2>
+    <div class="languages">
+        <h3>Programming languages</h3>
+        <ul class="languages-list">
+            <li>Java / JavaFX</li>
+            <li>SQL / PLPGSQL</li>
+            <li>HTML / CSS</li>
+            <li>Python</li>
+            <li>Learning PHP</li>
+            <li>Learning Flask</li>
+            <li>Self-learning JavaScript</li>
+            <li>Markdown</li>
+        </ul>
+    </div>
+    <div class="outils">
+        <h3>My development tools</h3>
+        <ul class="outils-list">
+            <li>Visual Studio Code</li>
+            <li>JetBrains Ultimate Pack (IntelliJ, PyCharm, PhpStorm)</li>
+            <li>GitHub / GitLab</li>
+            <li>PostgreSQL</li>
+            <li>SceneBuilder</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+    <h2>Some of my projects</h2>
+
+    <!-- My HomePage -->
+    <div class="homepage">
+        <img src="../img/logo_homepage.png" alt="homepage logo" id="logo_homepage">
+        <h3>HomePage</h3>
+        <p>I created a homepage for my desktop PC. This homepage allows me to open applications through buttons on the page and even suggests ideas when I’m bored.
+            I also added a dark mode for late-night use.</p>
+        <a href="projets.html"><button>Learn more</button></a>
+    </div>
+
+    <!-- My ValoApp -->
+    <div class="valoapp">
+        <img src="../img/logo_valorant.png" alt="Valorant project logo" id="logo_valorant">
+        <h3>ValoApp</h3>
+        <p>I developed an application based on one of my favorite games: Valorant.
+            It’s an account management app for Valorant.
+            The app isn’t finished yet, but I think it’s worth showing because creating it taught me a lot.</p>
+        <a href="projets.html"><button>Learn more</button></a>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+    <h2>Let’s get in touch!</h2>
+    <p>You can contact me directly via:</p>
+    <ul>
+        <li class="contactLi">Email: <a href="mailto:nathan_fraysse@redfoxou.dev">nathan_fraysse@redfoxou.dev</a></li>
+        <li class="contactLi">LinkedIn: <a href="https://www.linkedin.com/in/nathan-fraysse" target="_blank">My LinkedIn profile</a></li>
+        <li class="contactLi">GitHub: <a href="https://github.com/RedFoxou06" target="_blank">My GitHub projects</a></li>
+    </ul>
+    <form action="https://formspree.io/f/mrbawodv" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© Nathan Fraysse</p>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+</html>

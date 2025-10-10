@@ -43,10 +43,12 @@ header.hidden {
 nav {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    position: relative;
 }
 
 nav a {
@@ -153,6 +155,11 @@ footer {
     margin-top: 2rem;
 }
 
+.lang-btn {
+    position: absolute;
+    right: 2rem;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     #passion {
@@ -174,6 +181,7 @@ footer {
         flex-wrap: nowrap;
         scrollbar-width: none;
         -ms-overflow-style: none;
+        justify-content: flex-start;
     }
 
     nav::-webkit-scrollbar {
@@ -183,6 +191,11 @@ footer {
     nav a {
         padding: 0.6rem 1rem;
         font-size: 0.85rem;
+    }
+
+    .lang-btn {
+        position: static;
+        margin-left: auto;
     }
 
     #passion {
@@ -220,6 +233,10 @@ footer {
         padding: 0.5rem 0.8rem;
         font-size: 0.8rem;
         border-radius: 20px;
+    }
+
+    .lang-btn {
+        position: static;
     }
 
     #passion {
@@ -270,6 +287,10 @@ footer {
         padding: 0.4rem 0.6rem;
         font-size: 0.75rem;
     }
+
+    .lang-btn {
+         position: static;
+     }
 
     #passion {
         margin: 4rem 0.5rem 0 0.5rem;
