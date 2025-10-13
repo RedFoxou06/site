@@ -1,59 +1,12 @@
-/* Variables CSS - Thème Clair (par défaut) */
+/* Variables CSS */
 :root {
   --primary: #8cd7ff;
   --secondary: #e6f3ff;
   --light-text: #fff;
   --dark-text: #2c3e50;
-  --background: linear-gradient(135deg, #8cd7ff 0%, #e6f3ff 100%);
+  --gradient-bg: linear-gradient(135deg, #8cd7ff 0%, #e6f3ff 100%);
   --shadow: 0 10px 30px rgba(140, 215, 255, 0.3);
   --hover-shadow: 0 15px 40px rgba(140, 215, 255, 0.4);
-  --card-bg: #fff;
-  --header-bg: rgba(255, 255, 255, 0.95);
-  --border-color: transparent;
-  --text-color: #2c3e50;
-  --text-opacity: 0.8;
-}
-
-/* Thème Sombre */
-body.dark-mode {
-  --primary: #4a9eff;
-  --secondary: #1a2332;
-  --light-text: #e8f0f7;
-  --dark-text: #e8f0f7;
-  --background: linear-gradient(135deg, #0a0f1a 0%, #1a2536 100%);
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  --hover-shadow: 0 15px 40px rgba(74, 158, 255, 0.3);
-  --card-bg: #151d2b;
-  --header-bg: rgba(21, 29, 43, 0.95);
-  --border-color: #2a3a4f;
-  --text-color: #e8f0f7;
-  --text-opacity: 0.9;
-}
-
-/* Bouton de toggle du thème */
-.theme-toggle {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: var(--primary);
-  color: var(--light-text);
-  border: none;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  cursor: pointer;
-  box-shadow: var(--shadow);
-  transition: all 0.3s ease;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.1) rotate(180deg);
-  box-shadow: var(--hover-shadow);
 }
 
 /* Reset et base */
@@ -66,23 +19,21 @@ body.dark-mode {
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  color: var(--text-color);
-  background: var(--background);
+  color: var(--dark-text);
+  background: var(--gradient-bg);
   min-height: 100vh;
-  transition: all 0.3s ease;
 }
 
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: var(--header-bg);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   z-index: 1000;
   padding: 1rem 0;
   box-shadow: 0 2px 20px rgba(140, 215, 255, 0.2);
-  transition: transform 0.3s ease, background 0.3s ease;
-  border-bottom: 1px solid var(--border-color);
+  transition: transform 0.3s ease, background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 header.hidden {
@@ -102,7 +53,7 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--dark-text);
   font-weight: 600;
   padding: 0.5rem 1.5rem;
   border-radius: 25px;
@@ -147,7 +98,7 @@ nav a:hover::before {
   justify-content: center;
   text-align: center;
   padding: 2rem;
-  background: var(--background);
+  background: var(--gradient-bg);
 }
 
 .presentation {
@@ -159,77 +110,91 @@ nav a:hover::before {
 .presentation h1 {
   font-size: 3.5rem;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--primary) 0%, #7bb8ff 100%);
+  background: #0074cc;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 4px 8px rgba(140, 215, 255, 0.3);
 }
 
 .presentation p {
   font-size: 1.3rem;
-  color: var(--text-color);
-  opacity: var(--text-opacity);
+  color: var(--dark-text);
+  opacity: 0.8;
   margin-bottom: 2rem;
 }
 
 /* Section competences*/
+
 #competences {
   padding: 6rem 2rem;
   max-width: 1200px;
   margin: 2rem auto 0;
-  background: var(--card-bg);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   box-shadow: var(--shadow);
-  border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
 }
 
 #competences h2 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: var(--primary);
+  color: var(--dark-text);
   position: relative;
 }
 
-.languages,
-.outils {
-  background: var(--secondary);
+.languages {
+  background: var(--light-text);
   border-radius: 15px;
   padding: 2rem;
   margin-bottom: 2rem;
   box-shadow: var(--shadow);
-  border: 1px solid var(--border-color);
+  border: 2px solid transparent;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.languages:hover,
-.outils:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--hover-shadow);
+.languages h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark-text);
 }
 
-.languages h3,
+.languages p {
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.outils {
+  background: var(--light-text);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
 .outils h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: var(--primary);
+  color: var(--dark-text);
 }
 
-.languages p,
 .outils p {
   margin-bottom: 1.5rem;
-  opacity: var(--text-opacity);
+  opacity: 0.8;
   line-height: 1.6;
-  color: var(--text-color);
 }
 
-.languages-list,
+.languages-list {
+  margin-left: 5%;
+}
+
 .outils-list {
   margin-left: 5%;
-  color: var(--text-color);
 }
 
 /* Section Projets */
@@ -237,54 +202,44 @@ nav a:hover::before {
   padding: 6rem 2rem;
   max-width: 1200px;
   margin: 2rem auto 0;
-  background: var(--card-bg);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   box-shadow: var(--shadow);
-  border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
 }
 
 #projects h2 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: var(--primary);
+  color: var(--dark-text);
   position: relative;
 }
 
 /* Cartes de projets */
 .valoapp,
 .homepage {
-  background: var(--secondary);
+  background: var(--light-text);
   border-radius: 15px;
   padding: 2rem;
   margin-bottom: 2rem;
   box-shadow: var(--shadow);
-  border: 1px solid var(--border-color);
+  border: 2px solid transparent;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.valoapp:hover,
-.homepage:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--hover-shadow);
 }
 
 .valoapp h3,
 .homepage h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: var(--primary);
+  color: var(--dark-text);
 }
 
 .valoapp p,
 .homepage p {
   margin-bottom: 1.5rem;
-  opacity: var(--text-opacity);
+  opacity: 0.8;
   line-height: 1.6;
-  color: var(--text-color);
 }
 
 /* Boutons */
@@ -299,12 +254,6 @@ button {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(74, 158, 255, 0.4);
 }
 
 /* Section Contact */
@@ -312,18 +261,16 @@ button:hover {
   padding: 6rem 2rem;
   max-width: 1200px;
   margin: 2rem auto;
-  background: var(--card-bg);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
   box-shadow: var(--shadow);
   text-align: center;
-  border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
 }
 
 #contact h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: var(--primary);
+  color: var(--dark-text);
   position: relative;
 }
 
@@ -342,8 +289,7 @@ button:hover {
 #contact p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  opacity: var(--text-opacity);
-  color: var(--text-color);
+  opacity: 0.8;
 }
 
 #contact ul {
@@ -356,18 +302,16 @@ button:hover {
 }
 
 #contact li {
-  background: var(--secondary);
+  background: var(--light-text);
   padding: 1rem 1.5rem;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--border-color);
+  box-shadow: 0 5px 15px rgba(140, 215, 255, 0.2);
+  border: 2px solid transparent;
   transition: all 0.3s ease;
 }
 
 #contact li:hover {
   border-color: var(--primary);
-  transform: translateY(-3px);
-  box-shadow: var(--hover-shadow);
 }
 
 #contact a {
@@ -387,7 +331,7 @@ form label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
-  color: var(--text-color);
+  color: var(--dark-text);
 }
 
 form input,
@@ -395,20 +339,19 @@ form textarea {
   width: 100%;
   padding: 0.8rem;
   margin-bottom: 1.5rem;
-  border: 1px solid var(--border-color);
+  border: 2px solid transparent;
   border-radius: 10px;
   background: var(--secondary);
   font-family: inherit;
   font-size: 1rem;
-  color: var(--text-color);
-  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 form input:focus,
 form textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 10px rgba(74, 158, 255, 0.3);
+  background: var(--light-text);
+  box-shadow: 0 0 10px rgba(140, 215, 255, 0.3);
 }
 
 form button {
@@ -418,27 +361,25 @@ form button {
 
 /* Footer */
 footer {
-  background: var(--card-bg);
-  color: var(--text-color);
+  background: var(--dark-text);
+  color: var(--light-text);
   text-align: center;
   padding: 2rem;
   margin-top: 2rem;
-  border-top: 1px solid var(--border-color);
-  transition: all 0.3s ease;
 }
 
-#logo_homepage,
+#logo_homepage {
+  display: block;
+  height: 7%;
+  width:7%;
+  margin: 0 auto;
+}
+
 #logo_valorant {
   display: block;
   height: 7%;
-  width: 7%;
+  width:7%;
   margin: 0 auto;
-  transition: filter 0.3s ease;
-}
-
-body.dark-mode #logo_homepage,
-body.dark-mode #logo_valorant {
-  filter: brightness(0.9);
 }
 
 /* Responsive Design */
@@ -455,12 +396,6 @@ body.dark-mode #logo_valorant {
 
   .presentation h1 {
     font-size: 3rem;
-  }
-
-  .theme-toggle {
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
   }
 }
 
@@ -550,14 +485,6 @@ body.dark-mode #logo_valorant {
   button {
     padding: 0.7rem 1.5rem;
     font-size: 0.9rem;
-  }
-
-  .theme-toggle {
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
   }
 }
 
@@ -671,14 +598,6 @@ body.dark-mode #logo_valorant {
   footer p {
     font-size: 0.9rem;
   }
-
-  .theme-toggle {
-    bottom: 1rem;
-    right: 1rem;
-    width: 45px;
-    height: 45px;
-    font-size: 1rem;
-  }
 }
 
 @media (max-width: 320px) {
@@ -728,11 +647,5 @@ body.dark-mode #logo_valorant {
   button {
     padding: 0.5rem 1rem;
     font-size: 0.75rem;
-  }
-
-  .theme-toggle {
-    width: 40px;
-    height: 40px;
-    font-size: 0.9rem;
   }
 }

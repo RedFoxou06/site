@@ -1,37 +1,6 @@
 // Attendre que le DOM soit entièrement chargé
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Gestion du thème sombre/clair
-    function initThemeToggle() {
-        // Créer le bouton de toggle
-        const themeToggle = document.createElement('button');
-        themeToggle.className = 'theme-toggle';
-        themeToggle.innerHTML = '🌙';
-        themeToggle.setAttribute('aria-label', 'Basculer le thème');
-        document.body.appendChild(themeToggle);
-
-        // Vérifier si un thème est déjà sauvegardé
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            document.body.classList.add('dark-mode');
-            themeToggle.innerHTML = '☀️';
-        }
-
-        // Gérer le clic sur le bouton
-        themeToggle.addEventListener('click', function() {
-            document.body.classList.toggle('dark-mode');
-
-            // Mettre à jour l'icône
-            if (document.body.classList.contains('dark-mode')) {
-                themeToggle.innerHTML = '☀️';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                themeToggle.innerHTML = '🌙';
-                localStorage.setItem('theme', 'light');
-            }
-        });
-    }
-
     // Animation de fadeIn pour la présentation
     function animatePresentationOnLoad() {
         const presentation = document.querySelector('.presentation');
@@ -73,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
                 this.style.boxShadow = 'var(--shadow)';
-                this.style.borderColor = 'var(--border-color)';
+                this.style.borderColor = 'transparent';
 
                 if (img) {
                     img.style.transform = 'scale(1) translateY(0)';
@@ -95,15 +64,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Animation au survol des boutons (sauf le theme toggle)
+    // Animation au survol des boutons
     function setupButtonAnimations() {
-        const buttons = document.querySelectorAll('button:not(.theme-toggle)');
+        const buttons = document.querySelectorAll('button');
 
         buttons.forEach(button => {
             button.addEventListener('mouseenter', function() {
                 this.style.transition = 'all 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease';
                 this.style.transform = 'translateY(-2px)';
                 this.style.boxShadow = '0 8px 25px rgba(140, 215, 255, 0.4)';
+                this.style.background = '#0074cc';
 
                 // Animation de l'effet de brillance (::before)
                 this.style.setProperty('--shine-left', '100%');
@@ -112,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
             button.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
                 this.style.boxShadow = 'none';
+                this.style.background = 'var(--primary)';
                 this.style.setProperty('--shine-left', '-100%');
             });
 
@@ -148,6 +119,11 @@ document.addEventListener('DOMContentLoaded', function() {
         contactLinks.forEach(link => {
             link.addEventListener('mouseenter', function() {
                 this.style.transition = 'color 0.3s ease';
+                this.style.color = '#0074cc';
+            });
+
+            link.addEventListener('mouseleave', function() {
+                this.style.color = 'var(--primary)';
             });
         });
     }
@@ -160,11 +136,13 @@ document.addEventListener('DOMContentLoaded', function() {
             input.addEventListener('focus', function() {
                 this.style.transition = 'all 0.3s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease';
                 this.style.borderColor = 'var(--primary)';
+                this.style.background = 'var(--light-text)';
                 this.style.boxShadow = '0 0 10px rgba(140, 215, 255, 0.3)';
             });
 
             input.addEventListener('blur', function() {
-                this.style.borderColor = 'var(--border-color)';
+                this.style.borderColor = 'transparent';
+                this.style.background = 'var(--secondary)';
                 this.style.boxShadow = 'none';
             });
         });
@@ -181,17 +159,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (header) {
                 header.style.transition = 'all 0.3s ease';
 
-                // Masquer/afficher le header
-                if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                    header.classList.add('hidden');
-                } else {
-                    header.classList.remove('hidden');
-                }
-
                 // Optionnel : changer l'apparence du header selon le scroll
                 if (currentScrollY > 100) {
+                    header.style.background = 'rgba(255, 255, 255, 0.98)';
                     header.style.backdropFilter = 'blur(15px)';
                 } else {
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
                     header.style.backdropFilter = 'blur(10px)';
                 }
             }
@@ -229,7 +202,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialiser toutes les animations
     function initializeAnimations() {
-        initThemeToggle();
         animatePresentationOnLoad();
         setupProjectCardsAnimations();
         setupButtonAnimations();
@@ -246,4 +218,21 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
         animatePresentationOnLoad();
     }, 100);
+});
+
+let lastScrollY = window.scrollY;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scroll vers le bas -> cacher
+        header.classList.add('hidden');
+    } else {
+        // Scroll vers le haut -> montrer
+        header.classList.remove('hidden');
+    }
+
+    lastScrollY = currentScrollY;
 });
