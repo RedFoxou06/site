@@ -236,3 +236,24 @@ window.addEventListener('scroll', () => {
 
     lastScrollY = currentScrollY;
 });
+
+const form = document.getElementById('contact-form');
+if (form) {
+    const status = document.getElementById('form-message');
+    form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const data = new FormData(form);
+        const response = await fetch("https://formspree.io/f/mrbawodv", {
+            method: 'POST',
+            body: data,
+            headers: {'Accept': 'application/json'}
+        });
+
+        if (response.ok) {
+            status.innerHTML = "Merci, votre message a bien été envoyé !";
+            form.reset();
+        } else {
+            status.innerHTML = "Oups! Une erreur s'est produite.";
+        }
+    });
+}
